@@ -1,11 +1,12 @@
-import HelloWorld from './components/HelloWorld';
+// Pages
+import HomePage from './pages/Home';
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App-header">
-      <HelloWorld />
+    <div>
+      <HomePage />
     </div>
   );
 }

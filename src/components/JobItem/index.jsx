@@ -1,17 +1,19 @@
 
-function JobItem() {
+function JobItem(props) {
+  const { job } = props;
+  const { title, company, location, type, image, className } = job;
   return (
     <div className="col-xs-12">
-      <a className="item-block" href="job-detail.html">
+      <a className="item-block" href='/'>
         <header>
-          <img src="img/logo-google.jpg" alt="" />
+          <img src={image} alt={company} />
           <div className="hgroup">
-            <h4>Senior front-end developer</h4>
-            <h5>Google</h5>
+            <h4>{title}</h4>
+            <h5>{company}</h5>
           </div>
           <div className="header-meta">
-            <span className="location">Menlo park, CA</span>
-            <span className="label label-success">Full-time</span>
+            <span className="location">{location}</span>
+            <span className={`label ${className}`}>{type}</span>
           </div>
         </header>
       </a>

@@ -7,8 +7,8 @@ import './App.css';
 
 function App() {
   return (
-    <div className="main-container">
-      <LoginPage />
+    <div>
+      <HomePage />
     </div>
   );
 }

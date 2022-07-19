@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/97f3d44f-04b8-4133-bf4f-9da72a9df228/deploy-status)](https://app.netlify.com/sites/top-v17-kmz/deploys)
+
 
 # Sticker Buzz - Make It Real Project
 

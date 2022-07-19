@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "John Doe",
+    "title": "Front-end developer",
+    "location": "Menlo park, CA",
+    "rate": "$55 per hour",
+    "applied": "Apr 15, 2018",
+    "image": "/img/avatar-1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "Bikesh Soltanian",
+    "title": "Java developer",
+    "location": "Fairfield, IA",
+    "rate": "$60 per hour",
+    "applied": "Apr 15, 2018",
+    "image": "/img/avatar-2.jpg"
+  },
+  {
+    "id": "3",
+    "name": "Chris Hernandeziyan",
+    "title": "Front-end developer",
+    "location": "Seattle, WA",
+    "rate": "$50 per hour",
+    "applied": "Apr 15, 2018",
+    "image": "/img/avatar-3.jpg"
+  },
+  {
+    "id": "4",
+    "name": "Khriztian Moreno",
+    "title": "FullStack Javascript Developer",
+    "location": "Medellín, CO",
+    "rate": "$70 per hour",
+    "applied": "Apr 15, 2021",
+    "image": "/img/avatar-4.jpg"
+  }
+]

@@ -1,213 +1,105 @@
-import JobItem from '../JobItem'
+import { Link } from 'react-router-dom';
 
-const responseData = [
-  {
-    "id": "1020",
-    "title": "Senior front-end developer",
-    "company": "Google",
-    "image": "/img/logo-google.jpg",
-    "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
-    "summary": "A rapidly growing, well established marketing firm is looking for an experienced web developer for a full-time position. In this role, you will develop websites, apps, emails and other forms of digital electronic media, all while maintaining brand standards across design projects and other marketing communication materials.",
-    "type": "Full time",
-    "location": "Menlo Park, CA",
-    "salary": "$90,000 - $110,000 / year",
-    "certificate": "Master or Bachelor",
-    "experience": "2+ years experience",
-    "hours": "40h / week",
-    "responsibilities": [
-      "Build next-generation web applications with a focus on the client side.",
-      "Redesign UI's, implement new UI's, and pick up Java as necessary.",
-      "Explore and design dynamic and compelling consumer experiences.",
-      "Design and build scalable framework for web applications."
-    ],
-    "minimumQualifications": [
-      "BA/BS degree in a technical field or equivalent practical experience",
-      "2 years of relevant work experience in software development.",
-      "Programming experience in C, C++ or Java.",
-      "Experience with AJAX, HTML and CSS."
-    ],
-    "preferredQualifications": [
-      "Interest in user interface design.",
-      "Web application development experience.",
-      "Experience working on cross-browser platforms.",
-      "Development experience designing object-oriented JavaScript.",
-      "Experience with user interface frameworks such as XUL, Flex and XAML.",
-      "Knowledge of user interface design."
-    ],
-    "ago": "34 min ago",
-    "className": "label-success"
-  },
-  {
-    "id": "1030",
-    "title": "Software Engineer (Entry or Senior)",
-    "company": "Linkedin ",
-    "image": "/img/logo-linkedin.png",
-    "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
-    "summary": "The Special Programs Department II is seeking to hire a Computer Scientist to augment our software development team. Members of the software development team are expected to follow established software engineering principles to methodically deliver mission application software.",
-    "type": "Part time",
-    "location": "Livermore, CA",
-    "salary": "$60,000 - $75,000 / year",
-    "certificate": "Master or Bachelor",
-    "experience": "2+ years experience",
-    "hours": "40h / week",
-    "responsibilities": [
-      "Build next-generation web applications with a focus on the client side.",
-      "Redesign UI's, implement new UI's, and pick up Java as necessary.",
-      "Explore and design dynamic and compelling consumer experiences.",
-      "Design and build scalable framework for web applications."
-    ],
-    "minimumQualifications": [
-      "BA/BS degree in a technical field or equivalent practical experience",
-      "2 years of relevant work experience in software development.",
-      "Programming experience in C, C++ or Java.",
-      "Experience with AJAX, HTML and CSS."
-    ],
-    "preferredQualifications": [
-      "Interest in user interface design.",
-      "Web application development experience.",
-      "Experience working on cross-browser platforms.",
-      "Development experience designing object-oriented JavaScript.",
-      "Experience with user interface frameworks such as XUL, Flex and XAML.",
-      "Knowledge of user interface design."
-    ],
-    "ago": "8 hours ago",
-    "className": "label-warning"
-  },
-  {
-    "id": "1040",
-    "title": "Full Stack Web Developer",
-    "company": "Envato ",
-    "image": "/img/logo-envato.png",
-    "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
-    "summary": "We're seeing a driven, curious, passionate full-stack web developer to help change how people learn creative skills and effortlessly create the images they imagine. You’ll be part of a new rapid prototyping and development team helping to apply lean startup development methodologies and modern web technologies to shape the future of Creative Cloud.",
-    "type": "Freelance",
-    "location": "San Francisco, CA",
-    "salary": "$105,000 / year",
-    "certificate": "Master",
-    "experience": "2+ years experience",
-    "hours": "40h / week",
-    "responsibilities": [
-      "Build next-generation web applications with a focus on the client side.",
-      "Redesign UI's, implement new UI's, and pick up Java as necessary.",
-      "Explore and design dynamic and compelling consumer experiences.",
-      "Design and build scalable framework for web applications."
-    ],
-    "minimumQualifications": [
-      "BA/BS degree in a technical field or equivalent practical experience",
-      "2 years of relevant work experience in software development.",
-      "Programming experience in C, C++ or Java.",
-      "Experience with AJAX, HTML and CSS."
-    ],
-    "preferredQualifications": [
-      "Interest in user interface design.",
-      "Web application development experience.",
-      "Experience working on cross-browser platforms.",
-      "Development experience designing object-oriented JavaScript.",
-      "Experience with user interface frameworks such as XUL, Flex and XAML.",
-      "Knowledge of user interface design."
-    ],
-    "ago": "2 days ago",
-    "className": "label-info"
-  },
-  {
-    "id": "1050",
-    "title": "Web Applications Developer",
-    "company": "Facebook",
-    "image": "/img/logo-facebook.png",
-    "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
-    "summary": "Client needs a back-end Java developer who has worked mainly on Java, J2EE, Spring, Web Services, and other Java related technologies.",
-    "type": "Internship",
-    "location": "Lexington, MA",
-    "salary": "$130,000 - $150,000 / year",
-    "certificate": "Ph.D. or Master",
-    "experience": "2+ years experience",
-    "hours": "40h / week",
-    "responsibilities": [
-      "Build next-generation web applications with a focus on the client side.",
-      "Redesign UI's, implement new UI's, and pick up Java as necessary.",
-      "Explore and design dynamic and compelling consumer experiences.",
-      "Design and build scalable framework for web applications."
-    ],
-    "minimumQualifications": [
-      "BA/BS degree in a technical field or equivalent practical experience",
-      "2 years of relevant work experience in software development.",
-      "Programming experience in C, C++ or Java.",
-      "Experience with AJAX, HTML and CSS."
-    ],
-    "preferredQualifications": [
-      "Interest in user interface design.",
-      "Web application development experience.",
-      "Experience working on cross-browser platforms.",
-      "Development experience designing object-oriented JavaScript.",
-      "Experience with user interface frameworks such as XUL, Flex and XAML.",
-      "Knowledge of user interface design."
-    ],
-    "ago": "Feb 26, 2018",
-    "className": "label-danger"
-  },
-  {
-    "id": "1060",
-    "title": "Sr. SQL Server Developer",
-    "company": "Microsoft",
-    "image": "/img/logo-microsoft.jpg",
-    "about": "You will help Google build next-generation web applications like Gmail, Google Docs, Google Analytics, and the Google eBookstore and eBook readers. As a Front End Engineer at Google, you will specialize in building responsive and elegant web UIs with AJAX and similar technologies. You may design or work on frameworks for building scalable frontend applications. We are looking for engineers who are passionate about and have experience building leading-edge user experience, including dynamic consumer experiences",
-    "summary": "Understand and model complex business requirements into database schemas and work with existing databases in SQL and NOSQL data stores. Develop high performance stored procedures, triggers and other database level code to provide data services to other teams.",
-    "type": "Remote",
-    "location": "Palo Alto, CA",
-    "salary": "$125,000 - $140,000 / year",
-    "certificate": "Ph.D. or Master",
-    "experience": "2+ years experience",
-    "hours": "40h / week",
-    "responsibilities": [
-      "Build next-generation web applications with a focus on the client side.",
-      "Redesign UI's, implement new UI's, and pick up Java as necessary.",
-      "Explore and design dynamic and compelling consumer experiences.",
-      "Design and build scalable framework for web applications."
-    ],
-    "minimumQualifications": [
-      "BA/BS degree in a technical field or equivalent practical experience",
-      "2 years of relevant work experience in software development.",
-      "Programming experience in C, C++ or Java.",
-      "Experience with AJAX, HTML and CSS."
-    ],
-    "preferredQualifications": [
-      "Interest in user interface design.",
-      "Web application development experience.",
-      "Experience working on cross-browser platforms.",
-      "Development experience designing object-oriented JavaScript.",
-      "Experience with user interface frameworks such as XUL, Flex and XAML.",
-      "Knowledge of user interface design."
-    ],
-    "ago": "Feb 16, 2018",
-    "className": "label-success"
-  }
-]
+const RecentJobs = () => (
+  <section>
+    <div className="container">
+      <header className="section-header">
+        <span>Latest</span>
+        <h2>Recent jobs</h2>
+      </header>
 
-function RecentJobs() {
-  return (
-    <section>
-      <div className="container">
-        <header className="section-header">
-          <span>Latest</span>
-          <h2>Recent jobs</h2>
-        </header>
-
-        <div className="row item-blocks-connected">
-
-          {responseData.map(job => (
-            <JobItem key={job.id} job={job} />
-          ))}
-
-
+      <div className="row item-blocks-connected">
+        <div className="col-xs-12">
+          <a className="item-block" href="/">
+            <header>
+              <img src="./img/logo-google.jpg" alt="" />
+              <div className="hgroup">
+                <h4>Senior front-end developer</h4>
+                <h5>Google</h5>
+              </div>
+              <div className="header-meta">
+                <span className="location">Menlo park, CA</span>
+                <span className="label label-success">Full-time</span>
+              </div>
+            </header>
+          </a>
         </div>
 
-        <br/><br/>
-        <p className="text-center">
-          <a className="btn btn-info" href="job-list.html">Browse all jobs</a>
-        </p>
+        <div className="col-xs-12">
+          <a className="item-block" href="/">
+            <header>
+              <img src="./img/logo-linkedin.png" alt="" />
+              <div className="hgroup">
+                <h4>Software Engineer (Entry or Senior)</h4>
+                <h5>Linkedin</h5>
+              </div>
+              <div className="header-meta">
+                <span className="location">Livermore, CA</span>
+                <span className="label label-warning">Part-time</span>
+              </div>
+            </header>
+          </a>
+        </div>
+
+        <div className="col-xs-12">
+          <a className="item-block" href="/">
+            <header>
+              <img src="./img/logo-envato.png" alt="" />
+              <div className="hgroup">
+                <h4>Full Stack Web Developer</h4>
+                <h5>Envato</h5>
+              </div>
+              <div className="header-meta">
+                <span className="location">San Francisco, CA</span>
+                <span className="label label-info">Freelance</span>
+              </div>
+            </header>
+          </a>
+        </div>
+
+        <div className="col-xs-12">
+          <a className="item-block" href="/">
+            <header>
+              <img src="./img/logo-facebook.png" alt="" />
+              <div className="hgroup">
+                <h4>Web Applications Developer</h4>
+                <h5>Facebook</h5>
+              </div>
+              <div className="header-meta">
+                <span className="location">Lexington, MA</span>
+                <span className="label label-danger">Internship</span>
+              </div>
+            </header>
+          </a>
+        </div>
+
+        <div className="col-xs-12">
+          <a className="item-block" href="/">
+            <header>
+              <img src="/img/logo-microsoft.jpg" alt="" />
+              <div className="hgroup">
+                <h4>Sr. SQL Server Developer</h4>
+                <h5>Microsoft</h5>
+              </div>
+              <div className="header-meta">
+                <span className="location">Palo Alto, CA</span>
+                <span className="label label-success">Remote</span>
+              </div>
+            </header>
+          </a>
+        </div>
       </div>
-    </section>
-  )
-}
+
+      <br />
+
+      <br />
+      <p className="text-center">
+        <Link className="btn btn-info" to="/jobs">
+          Browse all jobs
+        </Link>
+      </p>
+    </div>
+  </section>
+);
 
 export default RecentJobs;

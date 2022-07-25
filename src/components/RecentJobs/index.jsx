@@ -1,10 +1,19 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { getJobs } from '../../services/jobs'
 
 const RecentJobs = () => {
-  const [jobs, setJobs] = useState(getJobs());
+  const [jobs, setJobs] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await getJobs()
+      setJobs(result)
+    }
+
+    fetchData()
+  }, [])
 
   return (
     <section>

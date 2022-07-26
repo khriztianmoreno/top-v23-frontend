@@ -15,7 +15,9 @@ const Header = () => (
         <header>
           <img src="/img/logo-google.jpg" alt="Logo" />
           <div className="hgroup">
-            <h4>Senior front-end developer</h4>
+            <h4>
+              Senior front-end developer
+            </h4>
             <h5>Google</h5>
           </div>
           <div className="header-meta">

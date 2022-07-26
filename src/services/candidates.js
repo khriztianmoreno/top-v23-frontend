@@ -2,7 +2,8 @@ const BASE_URL = 'http://localhost:8080/api';
 
 export async function getCandidates() {
   const response = await fetch(`${BASE_URL}/candidates`);
-  return await response.json();
+  const data = await response.json();
+  return data;
 }
 
 export async function createApplicant(applicant) {
@@ -12,9 +13,7 @@ export async function createApplicant(applicant) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(applicant),
-  }
+  };
   const response = await fetch(`${BASE_URL}/applicants`, options);
-  return await response.json();
+  return response.json();
 }
-
-

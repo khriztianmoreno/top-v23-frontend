@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 
 const Todo = (props) => {
-  const { text, isCompleted, handleTodo, id } = props;
+  const {
+    text, isCompleted, handleTodo, id,
+  } = props;
 
   const handleClick = () => {
     handleTodo(id);

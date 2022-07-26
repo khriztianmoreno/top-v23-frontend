@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const HelloWorld = (props) => {
-  const { name, age, hobbies, profile, sayHello, children } = props;
+  const {
+    name, age, hobbies, profile, sayHello, children,
+  } = props;
 
   if (sayHello) {
     sayHello();

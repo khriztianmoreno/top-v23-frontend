@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { getJobs } from '../../services/jobs'
+import { getJobs } from '../../services/jobs';
+import JobElement from './JobElement';
 
 const RecentJobs = () => {
   const [jobs, setJobs] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await getJobs()
-      setJobs(result)
-    }
+      const result = await getJobs();
+      setJobs(result);
+    };
 
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
   return (
     <section>
@@ -25,22 +26,8 @@ const RecentJobs = () => {
 
         <div className="row item-blocks-connected">
           {
-            jobs.map(job => (
-              <div className="col-xs-12" key={job.id}>
-                <Link className="item-block" to={`/jobs/detail/${job.id}`}>
-                  <header>
-                    <img src={job.image} alt={job.title} />
-                    <div className="hgroup">
-                      <h4>{job.title}</h4>
-                      <h5>{job.company}</h5>
-                    </div>
-                    <div className="header-meta">
-                      <span className="location">{job.location}</span>
-                      <span className={`label ${job.className}`}>{job.type}</span>
-                    </div>
-                  </header>
-                </Link>
-              </div>
+            jobs.map((job) => (
+              <JobElement key={job.id} job={job} />
             ))
           }
         </div>
@@ -55,7 +42,7 @@ const RecentJobs = () => {
         </p>
       </div>
     </section>
-  )
+  );
 };
 
 export default RecentJobs;

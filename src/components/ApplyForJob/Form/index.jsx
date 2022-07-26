@@ -12,7 +12,7 @@ const Form = () => {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <main>
@@ -79,7 +79,7 @@ const Form = () => {
         </div>
       </section>
     </main>
-  )
+  );
 };
 
 export default Form;

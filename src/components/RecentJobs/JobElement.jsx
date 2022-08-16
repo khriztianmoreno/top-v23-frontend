@@ -5,10 +5,10 @@ const JobElement = ({ job }) => (
   <div className="col-xs-12">
     <Link className="item-block" to={`/jobs/detail/${job.id}`}>
       <header>
-        <img src={job.image} alt={job.title} />
+        <img src={job.imageLogo} alt={job.title} />
         <div className="hgroup">
           <h4>{job.title}</h4>
-          <h5>{job.company}</h5>
+          <h5>{job.company?.name}</h5>
         </div>
         <div className="header-meta">
           <span className="location">{job.location}</span>
@@ -25,7 +25,7 @@ JobElement.propTypes = {
    */
   job: PropTypes.shape({
     id: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
+    imageLogo: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     company: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,

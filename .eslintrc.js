@@ -26,5 +26,11 @@ module.exports = {
         namedComponents: 'arrow-function',
       },
     ],
+    'no-underscore-dangle': [
+      'error',
+      {
+        allow: ['_id'],
+      },
+    ],
   },
 };

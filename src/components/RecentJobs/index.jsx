@@ -27,7 +27,7 @@ const RecentJobs = () => {
         <div className="row item-blocks-connected">
           {
             jobs.map((job) => (
-              <JobElement key={job.id} job={job} />
+              <JobElement key={job._id} job={job} />
             ))
           }
         </div>

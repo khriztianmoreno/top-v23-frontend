@@ -8,6 +8,7 @@ import AddJob from './pages/Jobs/Create';
 import ApplyJob from './pages/Jobs/Apply';
 import DetailJob from './pages/Jobs/Detail';
 import BrowseJobs from './pages/Jobs';
+import VerifyAccount from './pages/VerifyAccount';
 
 const App = () => (
   <Routes>
@@ -19,6 +20,7 @@ const App = () => (
     <Route path="/candidates" element={<Candidates />} />
     <Route path="/login" element={<Login />} />
     <Route path="/register" element={<Register />} />
+    <Route path="/verify-account/:token" element={<VerifyAccount />} />
   </Routes>
 );
 

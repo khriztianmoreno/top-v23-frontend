@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const JobElement = ({ job }) => (
   <div className="col-xs-12">
-    <Link className="item-block" to={`/jobs/detail/${job.id}`}>
+    <Link className="item-block" to={`/jobs/detail/${job._id}`}>
       <header>
         <img src={job.imageLogo} alt={job.title} />
         <div className="hgroup">
@@ -24,13 +24,13 @@ JobElement.propTypes = {
    * Job object
    */
   job: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
     imageLogo: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    company: PropTypes.string.isRequired,
+    company: PropTypes.shape().isRequired,
     location: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
+    className: PropTypes.string,
   }),
 };
 

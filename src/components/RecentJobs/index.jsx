@@ -1,19 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { getJobs } from '../../services/jobs';
 import JobElement from './JobElement';
 
+import { fetchJobList } from '../../store/actions/job';
+
 const RecentJobs = () => {
-  const [jobs, setJobs] = useState([]);
+  const jobs = useSelector((state) => state.job.jobList);
+  const loading = useSelector((state) => state.ui.isLoading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await getJobs();
-      setJobs(result);
-    };
-
-    fetchData();
+    dispatch(fetchJobList());
   }, []);
 
   return (
@@ -25,6 +24,7 @@ const RecentJobs = () => {
         </header>
 
         <div className="row item-blocks-connected">
+          { loading ? <div className="col-md-12">Loading...</div> : null }
           {
             jobs.map((job) => (
               <JobElement key={job._id} job={job} />

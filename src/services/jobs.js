@@ -1,8 +1,9 @@
 const BASE_URL = `${process.env.REACT_APP_API_BASE_URL}/api`;
-
+/* eslint-disable */
 export async function getJobs() {
   const response = await fetch(`${BASE_URL}/jobs`);
-  return response.json();
+  throw new Error('holi');
+  // return response.json();
 }
 
 export async function getJob(id) {
